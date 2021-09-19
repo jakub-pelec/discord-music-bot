@@ -1,4 +1,5 @@
 const playMusic = require("../commands/play");
+const skipSong = require("../commands/skip");
 
 module.exports = (client) =>
     client.on("interactionCreate", async (interaction) => {
@@ -12,5 +13,7 @@ module.exports = (client) =>
             await interaction.reply("User info.");
         } else if (commandName === "play") {
             playMusic(client, interaction);
+        } else if (commandName === "skip") {
+            skipSong(client, interaction);
         }
     });

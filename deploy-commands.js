@@ -8,8 +8,11 @@ const commands = [
         .setName("play")
         .setDescription("Plays music")
         .addStringOption((option) =>
-            option.setName("URL").setDescription("URL").setRequired(true)
+            option.setName("url").setDescription("URL").setRequired(true)
         ),
+    new SlashCommandBuilder()
+        .setName("skip")
+        .setDescription("Skip current song"),
 ].map((command) => command.toJSON());
 
 const rest = new REST({ version: "9" }).setToken(token);
