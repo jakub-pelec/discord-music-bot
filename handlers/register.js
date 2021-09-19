@@ -6,6 +6,6 @@ const songAdd = require("./songAdd");
 module.exports = (client) => {
     ready(client);
     messageCreate(client);
-    // interactionCreate(client);
+    interactionCreate(client);
     songAdd(client);
 };

@@ -1,4 +1,4 @@
-const { createDiscordJSAdapter } = require("./adapter");
+const { createAdapter } = require("./adapter");
 const {
     joinVoiceChannel,
     entersState,
@@ -9,7 +9,7 @@ module.exports = async (channel) => {
     const connection = joinVoiceChannel({
         channelId: channel.id,
         guildId: channel.guild.id,
-        adapterCreator: createDiscordJSAdapter(channel),
+        adapterCreator: createAdapter(channel),
     });
     try {
         await entersState(connection, VoiceConnectionStatus.Ready, 30e3);
